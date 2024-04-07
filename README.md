@@ -26,4 +26,17 @@
 Код должен быть оптимальным и читаемым, при разработке желательно использовать общераспространённые практики (паттерны проектирования, тесты...)
 
 ##
+Примеры команд:
+
+--file-log C:\Users\lokot\Desktop\file.log --file-output C:\Users\lokot\Desktop\output.txt --address-start 192.168.1.100 --address-mask 32 --time-start 01.02.2024 --time-end 01.05.2024
+
+--file-log C:\Users\lokot\Desktop\file.log --file-output C:\Users\lokot\Desktop\output.txt --address-start 192.168.1.112 --address-mask 32 --time-start 01.02.2024 --time-end 01.05.2024
+
+--file-log C:\Users\lokot\Desktop\file.log --file-output C:\Users\lokot\Desktop\output.txt --address-start 192.168.1.124 --address-mask 32 --time-start 01.02.2024 --time-end 01.05.2024
+
+
+##
 P.s. пример журнала лежит в файле file.log
+
+
+
