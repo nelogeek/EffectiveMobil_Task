@@ -102,8 +102,8 @@ namespace EffectiveMobil_Task
                     {
                         var parts = line.Split(':');
                         var address = parts[0];
-                        var timeString = string.Join(":", parts.Skip(1)); // Объединяем оставшиеся части строки, чтобы получить строку времени
-                        var timeParts = timeString.Split(' '); // Разбиваем строку времени на дату и время
+                        var timeString = string.Join(":", parts.Skip(1)); 
+                        var timeParts = timeString.Split(' '); 
                         var datePart = timeParts[0];
                         var timePart = timeParts[1];
                         var fullTimeString = $"{datePart} {timePart}";
@@ -119,14 +119,13 @@ namespace EffectiveMobil_Task
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred while reading the log file: {ex.Message}");
-                // Можно обработать исключение по вашему усмотрению
             }
 
             return filteredAddresses;
         }
 
 
-        /// Метод для проверки, находится ли IP в указанном диапазоне
+        // Метод для проверки, находится ли IP в указанном диапазоне
         static bool IPInRange(string ip, string startAddress, int? mask)
         {
             if (mask == null)
@@ -134,8 +133,8 @@ namespace EffectiveMobil_Task
 
             var ipAddress = System.Net.IPAddress.Parse(ip).GetAddressBytes(); // Получаем байты IP-адреса
             var startIpAddress = System.Net.IPAddress.Parse(startAddress).GetAddressBytes(); // Получаем байты стартового IP-адреса
-                                                                                             // Преобразуем маску в байты сетевой части
-            byte[] maskBytes = new byte[4];
+                                                                                             
+            byte[] maskBytes = new byte[4]; // Преобразуем маску в байты сетевой части
             for (int i = 0; i < 4; i++)
             {
                 if (mask > 8)
@@ -195,7 +194,7 @@ namespace EffectiveMobil_Task
 
             try
             {
-                using (var writer = new StreamWriter(filePath, true)) // Установите append в true для добавления данных в конец файла
+                using (var writer = new StreamWriter(filePath, true)) 
                 {
                     foreach (var pair in ipCounts)
                     {
